@@ -3,7 +3,7 @@
 #define vi vector<ll>
 #define vs vector<string>
 #define all(x) x.begin(), x.end()
-#define Sort(x) sort(all(x));
+#define QuickSort(x) sort(all(x));
 
 using namespace std;
 
@@ -69,7 +69,7 @@ int main()
     cout << "\n> Do you wish to continue(Y/N)?";
     cin >> ch;
 
-    if (ch == 'Y')
+    if (ch == 'Y' || ch == 'y')
     {
 
         cout << "\n> Dequeing elements from queue.\n\n";
@@ -92,7 +92,7 @@ int main()
         cout << "\n> Do you wish to continue(Y/N)?";
         cin >> ch;
 
-        if (ch == 'Y')
+        if (ch == 'Y' || ch == 'y')
         {
             cout<<"\n> Elements successfully inserted into linked list from queue.\n";
             ll = insertInLinkedList(q1);
@@ -101,22 +101,22 @@ int main()
             cout << "\n> Do you wish to continue(Y/N)?";
             cin >> ch;
 
-            if (ch == 'Y')
+            if (ch == 'Y' || ch == 'y')
             {
-                Sort(ll);
+                QuickSort(ll);
                 cout << "\n> Applying quicksort to linked list........ \n";
                 cout << "\n> Linked list is: ";
                 printLinkedList(ll);
                 cout << "\n> Do you wish to continue(Y/N)?";
                 cin >> ch;
                 getline(cin, s1);
-                if (ch == 'Y')
+                if (ch == 'Y' || ch == 'y')
                 {
                     cout<<"\n>Enter new string: ";
                     getline(cin, str);
                     ll.pb(str);
                     cout<<"\n> New string inserted into linked list\n";
-                    Sort(ll);
+                    QuickSort(ll);
                     cout << "\n> Applying quicksort to linked list........ \n";
                     cout << "\n> Linked list is: ";
                     printLinkedList(ll);
