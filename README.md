@@ -1,11 +1,4 @@
 <h1 align="center">✨DSA ASSIGNMENT✨</h1>
-<p align="center">
-  <img src="https://img.shields.io/github/license/sandip2224/DSA-Assignment"/>
-  <img src="https://img.shields.io/github/forks/sandip2224/DSA-Assignment"/>
-  <img src="https://img.shields.io/github/stars/sandip2224/DSA-Assignment"/>
-  <img src="https://img.shields.io/github/issues-pr-closed/sandip2224/DSA-Assignment"/>
-  <img src="https://img.shields.io/github/repo-size/sandip2224/DSA-Assignment"/>
-</p>
 
 <!-- PROJECT LOGO -->
   <p align="center">
