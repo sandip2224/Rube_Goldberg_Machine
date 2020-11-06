@@ -1,6 +1,6 @@
 <h1 align="center">✨DSA ASSIGNMENT✨</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- PROJECT LOGO -->
@@ -82,6 +82,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://jayvardhanrathi.tech"><img src="https://avatars1.githubusercontent.com/u/39644109?v=4" width="100px;" alt=""/><br /><sub><b>Jayvardhan Rathi</b></sub></a><br /><a href="#content-ComputerScientist-01" title="Content">🖋</a></td>
+    <td align="center"><a href="https://sandipan-2224.web.app/"><img src="https://avatars3.githubusercontent.com/u/61842142?v=4" width="100px;" alt=""/><br /><sub><b>Sandipan Das</b></sub></a><br /><a href="#content-sandip2224" title="Content">🖋</a></td>
   </tr>
 </table>
 
