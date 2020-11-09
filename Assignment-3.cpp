@@ -3,18 +3,118 @@
 #define vi vector<ll>
 #define vs vector<string>
 #define all(x) x.begin(), x.end()
-#define QuickSort(x) sort(all(x));
+#define Sort(x) sort(all(x));
 
 using namespace std;
 
-struct Node
+// Tree declaration
+class Node
 {
+public:
     string data;
-    Node *next;
+    Node *left;
+    Node *right;
+
+    Node(string x)
+    {
+        data = x;
+        left = right = NULL;
+    }
 };
 
 stack<string> st1;
+vector<string> linkedlist;
 
+/*---------------------------------------------*/
+Node *buildtree(vector<string> arr, int n)
+{
+
+    queue<Node *> q;
+    Node *root = new Node(arr[0]);
+    q.push(root);
+    q.push(NULL);
+
+    int i = 1;
+    while (!q.empty())
+    {
+        Node *curr = q.front();
+        q.pop();
+
+        if (curr == NULL)
+        {
+            q.push(NULL);
+            continue;
+        }
+
+        if (i == n)
+            break;
+        curr->left = new Node(arr[i]);
+        ++i;
+        q.push(curr->left);
+
+        if (i == n)
+            break;
+
+        curr->right = new Node(arr[i]);
+        ++i;
+
+        q.push(curr->right);
+    }
+
+    return root;
+}
+
+/*--------------------------------------------------*/
+void printPreOrder(struct Node *node)
+{
+    if (node == NULL)
+        return;
+
+    /* first print data of node */
+    cout << node->data << " ";
+
+    /* then recur on left sutree */
+    printPreOrder(node->left);
+
+    /* now recur on right subtree */
+    printPreOrder(node->right);
+}
+
+/*--------------------------------------------------*/
+void printInorder(struct Node *node)
+{
+    if (node == NULL)
+        return;
+
+    /* first recur on left child */
+    printInorder(node->left);
+
+    /* then print the data of node */
+    linkedlist.pb(node->data);
+
+    cout << node->data << " ";
+
+    /* now recur on right child */
+    printInorder(node->right);
+}
+
+/*--------------------------------------------------*/
+void printPostorder(struct Node *node)
+{
+    if (node == NULL)
+        return;
+
+    // first recur on left subtree
+    printPostorder(node->left);
+
+    // then recur on right subtree
+    printPostorder(node->right);
+
+    // now deal with the node
+    cout << node->data << " ";
+}
+
+/*--------------------------------------------------*/
 void printQueue(queue<string> q1)
 {
     while (!q1.empty())
@@ -25,6 +125,7 @@ void printQueue(queue<string> q1)
     cout << "\n";
 }
 
+/*--------------------------------------------------*/
 vs insertInLinkedList(queue<string> q1)
 {
     vs ll;
@@ -36,6 +137,7 @@ vs insertInLinkedList(queue<string> q1)
     return ll;
 }
 
+/*--------------------------------------------------*/
 void printLinkedList(vs ll)
 {
     for (auto it : ll)
@@ -45,89 +147,109 @@ void printLinkedList(vs ll)
     cout << "NULL\n";
 }
 
+/*--------------------------------------------------*/
 int main()
 {
     long long int n, i;
-    cout<<"> Enter required number of inputs: ";
+    cout << "> Enter required number of inputs: ";
     cin >> n;
     char ch;
     string str, s1;
     getline(cin, s1);
     vs vec, ll;
     queue<string> q1;
-    cout<<"> Enter "<<n<<" inputs now: \n";
+    cout << "> Enter " << n << " inputs now: \n";
     for (i = 0; i < n; i++)
     {
-        cout<<"> ";
+        cout << "> ";
         getline(cin, str);
-        cout<<"> Pushed to queue\n\n";
+        cout << "> Pushed to queue\n\n";
         vec.pb(str);
         q1.push(str);
     }
-    cout<<"> Elements of queue are: ";
+    cout << "> Elements of queue are: ";
     printQueue(q1);
     cout << "\n> Do you wish to continue(Y/N)?";
     cin >> ch;
 
-    if (ch == 'Y' || ch == 'y')
+    if (ch == 'Y')
     {
 
         cout << "\n> Dequeing elements from queue.\n\n";
-        cout<<"> Pushing elements onto stack now!!\n\n";
+        cout << "> Pushing elements onto stack now!!\n\n";
         while (!q1.empty())
         {
             st1.push(q1.front());
             q1.pop();
         }
-        cout<<"> Elements successfully pushed to stack\n\n";
-        cout<<"> Popping from stack and requeing into queue\n\n";
+        cout << "> Elements successfully pushed to stack\n\n";
+        cout << "> Popping from stack and requeing into queue\n\n";
         while (!st1.empty())
         {
             q1.push(st1.top());
             st1.pop();
         }
-        cout<<"> Elements successfully popped from stack\n\n";
-        cout<<"> Elements of queue after dequeing are: ";
+        cout << "> Elements successfully popped from stack\n\n";
+        cout << "> Elements of queue after dequeing are: ";
         printQueue(q1);
         cout << "\n> Do you wish to continue(Y/N)?";
         cin >> ch;
 
-        if (ch == 'Y' || ch == 'y')
+        if (ch == 'Y')
         {
-            cout<<"\n> Elements successfully inserted into linked list from queue.\n";
-            ll = insertInLinkedList(q1);
-            cout << "\n> Linked list is: ";
-            printLinkedList(ll);
-            cout << "\n> Do you wish to continue(Y/N)?";
-            cin >> ch;
+            cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n";
+            Node *root = buildtree(vec, n);
+            cout << "\n> Level order insertion into binary tree successful\n";
+            cout << "\n> ELements of binary tree in pre-order fashion: ";
+            printPreOrder(root);
 
-            if (ch == 'Y' || ch == 'y')
+            cout << "\n\n> Do you wish to continue(Y/N)?";
+            cin >> ch;
+            if (ch == 'Y')
             {
-                QuickSort(ll);
-                cout << "\n> Applying quicksort to linked list........ \n";
-                cout << "\n> Linked list is: ";
-                printLinkedList(ll);
-                cout << "\n> Do you wish to continue(Y/N)?";
+                cout << "\nELements of binary tree in post-order fashion: ";
+                printPostorder(root);
+
+                cout << "\n\n> Do you wish to continue(Y/N)?";
                 cin >> ch;
-                getline(cin, s1);
-                if (ch == 'Y' || ch == 'y')
+                if (ch == 'Y')
                 {
-                    cout<<"\n>Enter new string: ";
-                    getline(cin, str);
-                    ll.pb(str);
-                    cout<<"\n> New string inserted into linked list\n";
-                    QuickSort(ll);
-                    cout << "\n> Applying quicksort to linked list........ \n";
-                    cout << "\n> Linked list is: ";
-                    printLinkedList(ll);
-                    cout << "\n> Do you wish to continue(Y/N)?";
+
+                    cout << "\n> Inserting elements into linked list in inorder fashion\n";
+                    cout << "\n> Insertion successful\n";
+                    printInorder(root);
+
+                    cout << "\n\n> Do you wish to continue(Y/N)?";
                     cin >> ch;
-                    cout << "\n> Thank you for using me!\n";
-                    return 0;
+                    if (ch == 'Y')
+                    {
+                        cout << "\n> Applying quicksort to linked list........ \n";
+                        Sort(linkedlist);
+                        cout << "\n> Linked list is: ";
+                        printLinkedList(linkedlist);
+                        getline(cin, s1);
+                        cout << "\n>Enter new string: ";
+                        getline(cin, str);
+                        linkedlist.pb(str);
+                        cout << "\n> New string inserted into linked list\n";
+                        Sort(linkedlist);
+                        cout << "\n> Applying quicksort to linked list........ \n";
+                        cout << "\n> Linked list is: ";
+                        printLinkedList(linkedlist);
+                        cout << "\n> Do you wish to continue(Y/N)?";
+                        cin >> ch;
+                        cout << "\n> Thank you for using me!\n";
+                        return 0;
+                    }
+                    else
+                    {
+                        cout << "Program terminated!";
+                        return 0;
+                    }
                 }
                 else
                 {
-                    cout << "> Program terminated";
+                    cout << "Program terminated!";
                     return 0;
                 }
             }
@@ -149,9 +271,3 @@ int main()
         return 0;
     }
 }
-
-/*4
-Sujay
-Jayvardhan
-Sandipan
-Vedant*/
