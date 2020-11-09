@@ -8,7 +8,7 @@
 using namespace std;
 
 // Tree declaration
-class Node
+struct Node
 {
 public:
     string data;
@@ -63,6 +63,34 @@ Node *buildtree(vector<string> arr, int n)
 
     return root;
 }
+
+/*---------------------------------------------*/
+void print2DUtil(Node *root, int space)
+{
+    // Base case
+    if (root == NULL)
+        return;
+    space+=10;
+    print2DUtil(root->right, space);
+
+    // Print current node after space
+    // count
+    cout<<"\n";
+    for (int i = 10; i < space; i++) cout<<" ";
+
+    cout<<root->data<<"\n";
+
+    // Process left child
+    print2DUtil(root->left, space);
+}
+
+/*---------------------------------------------*/
+void print2D(Node *root)
+{
+    // Pass initial space count as 0
+    print2DUtil(root, 0);
+}
+
 
 /*--------------------------------------------------*/
 void printPreOrder(struct Node *node)
@@ -199,7 +227,8 @@ int main()
         {
             cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n";
             Node *root = buildtree(vec, n);
-            cout << "\n> Level order insertion into binary tree successful\n";
+            print2D(root);
+            cout << "\n\n> Level order insertion into binary tree successful\n";
             cout << "\n> ELements of binary tree in pre-order fashion: ";
             printPreOrder(root);
 
