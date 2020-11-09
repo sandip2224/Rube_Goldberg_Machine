@@ -70,15 +70,16 @@ void print2DUtil(Node *root, int space)
     // Base case
     if (root == NULL)
         return;
-    space+=10;
+    space += 10;
     print2DUtil(root->right, space);
 
     // Print current node after space
     // count
-    cout<<"\n";
-    for (int i = 10; i < space; i++) cout<<" ";
+    cout << "\n";
+    for (int i = 10; i < space; i++)
+        cout << " ";
 
-    cout<<root->data<<"\n";
+    cout << root->data << "\n";
 
     // Process left child
     print2DUtil(root->left, space);
@@ -90,7 +91,6 @@ void print2D(Node *root)
     // Pass initial space count as 0
     print2DUtil(root, 0);
 }
-
 
 /*--------------------------------------------------*/
 void printPreOrder(struct Node *node)
@@ -120,7 +120,7 @@ void printInorder(struct Node *node)
     /* then print the data of node */
     linkedlist.pb(node->data);
 
-    cout << node->data << " ";
+    cout << node->data << " -> ";
 
     /* now recur on right child */
     printInorder(node->right);
@@ -247,6 +247,7 @@ int main()
                     cout << "\n> Inserting elements into linked list in inorder fashion\n";
                     cout << "\n> Insertion successful\n";
                     printInorder(root);
+                    cout << "NULL";
 
                     cout << "\n\n> Do you wish to continue(Y/N)?";
                     cin >> ch;
@@ -257,17 +258,22 @@ int main()
                         cout << "\n> Linked list is: ";
                         printLinkedList(linkedlist);
                         getline(cin, s1);
-                        cout << "\n>Enter new string: ";
-                        getline(cin, str);
-                        linkedlist.pb(str);
-                        cout << "\n> New string inserted into linked list\n";
-                        Sort(linkedlist);
-                        cout << "\n> Applying quicksort to linked list........ \n";
-                        cout << "\n> Linked list is: ";
-                        printLinkedList(linkedlist);
-                        cout << "\n> Do you wish to continue(Y/N)?";
-                        cin >> ch;
-                        cout << "\n> Thank you for using me!\n";
+                        do
+                        {
+                            cout << "\n>Enter new string: ";
+                            getline(cin, str);
+                            linkedlist.pb(str);
+                            cout << "\n> New string inserted into linked list\n";
+                            Sort(linkedlist);
+                            cout << "\n> Applying quicksort to linked list........ \n";
+                            cout << "\n> Linked list is: ";
+                            printLinkedList(linkedlist);
+                            cout << "\n> Do you wish to continue(Y/N)?";
+                            cin >> ch;
+                            getline(cin, str);
+                        } while (ch == 'Y');
+
+                        cout<< "\n> Thank you for using me!\n";
                         return 0;
                     }
                     else
