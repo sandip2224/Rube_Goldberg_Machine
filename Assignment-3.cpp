@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// Tree declaration
+/* Tree declaration*/
 struct Node
 {
 public:
@@ -22,9 +22,17 @@ public:
     }
 };
 
+/*A linked list node*/
+class listNode
+{
+	public:
+	string data;
+	listNode *next;
+};
+
 stack<string> st1;
 vector<string> linkedlist;
-
+listNode* head = NULL;
 /*---------------------------------------------*/
 Node *buildtree(vector<string> arr, int n)
 {
@@ -62,6 +70,25 @@ Node *buildtree(vector<string> arr, int n)
     }
 
     return root;
+}
+
+/*-----------------------------------------*/
+void append(listNode** head_ref, string new_data)
+{
+	listNode* new_node = new listNode();
+
+	listNode *last = *head_ref;
+	new_node->data = new_data;
+	new_node->next = NULL;
+	if (*head_ref == NULL)
+	{
+		*head_ref = new_node;
+		return;
+	}
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new_node;
+	return;
 }
 
 /*---------------------------------------------*/
@@ -117,7 +144,9 @@ void printInorder(struct Node *node)
     /* first recur on left child */
     printInorder(node->left);
 
-    /* then print the data of node */
+    /* Push data to end of linked list */
+    append(&head, node->data);
+
     linkedlist.pb(node->data);
 
     cout << node->data << " -> ";
@@ -166,19 +195,19 @@ vs insertInLinkedList(queue<string> q1)
 }
 
 /*--------------------------------------------------*/
-void printLinkedList(vs ll)
+void printLinkedList(vs linker)
 {
-    for (auto it : ll)
-    {
-        cout << it << " -> ";
-    }
-    cout << "NULL\n";
+     for(auto it: linker){
+        cout<<it<<" -> ";
+     }
+     cout<<"NULL\n";
 }
 
 /*--------------------------------------------------*/
 int main()
 {
     long long int n, i;
+
     cout << "> Enter required number of inputs: ";
     cin >> n;
     char ch;
@@ -243,11 +272,11 @@ int main()
                 cin >> ch;
                 if (ch == 'Y')
                 {
-
                     cout << "\n> Inserting elements into linked list in inorder fashion\n";
                     cout << "\n> Insertion successful\n";
+                    cout<<"> Linked list is: ";
                     printInorder(root);
-                    cout << "NULL";
+                    cout << "NULL\n";
 
                     cout << "\n\n> Do you wish to continue(Y/N)?";
                     cin >> ch;
@@ -263,6 +292,7 @@ int main()
                             cout << "\n>Enter new string: ";
                             getline(cin, str);
                             linkedlist.pb(str);
+                            append(&head, str);
                             cout << "\n> New string inserted into linked list\n";
                             Sort(linkedlist);
                             cout << "\n> Applying quicksort to linked list........ \n";
