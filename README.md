@@ -1,15 +1,7 @@
 <h2 align="center">Rube's Goldberg Machine✅</h2>
 
 <p align="center">
-   <img src="img/doc_logo.png" alt="Logo" height=100 weight=100/>
-</p>
-
-<p align='center'> 
-   <img src="https://img.shields.io/github/forks/sandip2224/DSA-Assignment?style=for-the-badge" />
-   <img src="https://img.shields.io/github/contributors/sandip2224/DSA-Assignment?style=for-the-badge" />
-   <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" /><br>
-   <img src="https://img.shields.io/github/issues-pr/sandip2224/DSA-Assignment?color=purple&style=for-the-badge" />
-   <img src="https://img.shields.io/github/issues-pr-closed-raw/sandip2224/DSA-Assignment?color=purple&style=for-the-badge" /></a><br>
+   <img src="img/engineering.png" alt="Logo" height=90 weight=90/>
 </p>
 
 <p align="center">
