@@ -23,10 +23,11 @@
 
 - [About the Project](#about-the-project)
   - [Built With](#built-with)
-  - [Contributors](#contributors)
+  - [Preview](#preview)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Contributors](#contributors)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -56,12 +57,9 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
  - [C++](https://www.w3schools.com/cpp/)
 
-<h2 align="center">Contributors</h2>
+<h2 align="center">Preview</h2>
 
-- [Sandipan Das](https://github.com/sandip2224)
-- [Jayvardhan Rathi](https://github.com/ComputerScientist-01)
-- [Sanskar Srivastava](https://github.com/sanskis)
-- [Ashutosh Kumar](https://github.com/Ashu-tosh-Kr)
+<p align="center"><img src="img/final_preview.gif" alt="Preview Gif"/></p>
 
 <!-- GETTING STARTED -->
 
@@ -95,6 +93,14 @@ To get a local copy up and running follow these simple example steps as mentione
 <h2 align="center">License</h2>
 
 Distributed under the MIT License. See `LICENSE` for more information.  
+
+
+<h2 align="center">Contributors</h2>
+
+- [Sandipan Das](https://github.com/sandip2224)
+- [Jayvardhan Rathi](https://github.com/ComputerScientist-01)
+- [Sanskar Srivastava](https://github.com/sanskis)
+- [Ashutosh Kumar](https://github.com/Ashu-tosh-Kr)
 
 
 <!-- CONTRIBUTING -->
