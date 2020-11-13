@@ -25,14 +25,14 @@ public:
 /*A linked list node*/
 class listNode
 {
-	public:
-	string data;
-	listNode *next;
+public:
+    string data;
+    listNode *next;
 };
 
 stack<string> st1;
 vector<string> linkedlist;
-listNode* head = NULL;
+listNode *head = NULL;
 /*---------------------------------------------*/
 Node *buildtree(vector<string> arr, int n)
 {
@@ -73,22 +73,22 @@ Node *buildtree(vector<string> arr, int n)
 }
 
 /*-----------------------------------------*/
-void append(listNode** head_ref, string new_data)
+void append(listNode **head_ref, string new_data)
 {
-	listNode* new_node = new listNode();
+    listNode *new_node = new listNode();
 
-	listNode *last = *head_ref;
-	new_node->data = new_data;
-	new_node->next = NULL;
-	if (*head_ref == NULL)
-	{
-		*head_ref = new_node;
-		return;
-	}
-	while (last->next != NULL)
-		last = last->next;
-	last->next = new_node;
-	return;
+    listNode *last = *head_ref;
+    new_node->data = new_data;
+    new_node->next = NULL;
+    if (*head_ref == NULL)
+    {
+        *head_ref = new_node;
+        return;
+    }
+    while (last->next != NULL)
+        last = last->next;
+    last->next = new_node;
+    return;
 }
 
 /*---------------------------------------------*/
@@ -101,7 +101,6 @@ void print2DUtil(Node *root, int space)
     print2DUtil(root->right, space);
 
     // Print current node after space
-    // count
     cout << "\n";
     for (int i = 10; i < space; i++)
         cout << " ";
@@ -174,12 +173,13 @@ void printPostorder(struct Node *node)
 /*--------------------------------------------------*/
 void printQueue(queue<string> q1)
 {
+    cout<<"[ ";
     while (!q1.empty())
     {
-        cout << q1.front() << " ";
+        cout << q1.front() << " | ";
         q1.pop();
     }
-    cout << "\n";
+    cout << "] \n";
 }
 
 /*--------------------------------------------------*/
@@ -197,10 +197,11 @@ vs insertInLinkedList(queue<string> q1)
 /*--------------------------------------------------*/
 void printLinkedList(vs linker)
 {
-     for(auto it: linker){
-        cout<<it<<" -> ";
-     }
-     cout<<"NULL\n";
+    for (auto it : linker)
+    {
+        cout << it << " -> ";
+    }
+    cout << "NULL\n";
 }
 
 /*--------------------------------------------------*/
@@ -215,7 +216,7 @@ int main()
     getline(cin, s1);
     vs vec, ll;
     queue<string> q1;
-    cout << "> Enter " << n << " inputs now: \n";
+    cout << "\n> Enter " << n << " inputs now: \n";
     for (i = 0; i < n; i++)
     {
         cout << "> ";
@@ -226,21 +227,21 @@ int main()
     }
     cout << "> Elements of queue are: ";
     printQueue(q1);
-    cout << "\n> Do you wish to continue(Y/N)?";
+    cout << "\n> Do you wish to continue(Y/N)? ";
     cin >> ch;
 
     if (ch == 'Y')
     {
 
         cout << "\n> Dequeing elements from queue.\n\n";
-        cout << "> Pushing elements onto stack now!!\n\n";
+        cout << "> Pushing elements onto stack now!!\n";
         while (!q1.empty())
         {
             st1.push(q1.front());
             q1.pop();
         }
         cout << "> Elements successfully pushed to stack\n\n";
-        cout << "> Popping from stack and requeing into queue\n\n";
+        cout << "> Popping from stack and requeing into queue\n";
         while (!st1.empty())
         {
             q1.push(st1.top());
@@ -249,36 +250,37 @@ int main()
         cout << "> Elements successfully popped from stack\n\n";
         cout << "> Elements of queue after dequeing are: ";
         printQueue(q1);
-        cout << "\n> Do you wish to continue(Y/N)?";
+        cout << "\n> Do you wish to continue(Y/N)? ";
         cin >> ch;
 
         if (ch == 'Y')
         {
-            cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n";
+            cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n\n";
             Node *root = buildtree(vec, n);
+            cout<<"2D Representation of Unordered Binary Tree:\n";
             print2D(root);
-            cout << "\n\n> Level order insertion into binary tree successful\n";
+            cout << "\n\n> Level order insertion into binary tree successful\n\n";
             cout << "\n> ELements of binary tree in pre-order fashion: ";
             printPreOrder(root);
 
-            cout << "\n\n> Do you wish to continue(Y/N)?";
+            cout << "\n\n> Do you wish to continue(Y/N)? ";
             cin >> ch;
             if (ch == 'Y')
             {
-                cout << "\nELements of binary tree in post-order fashion: ";
+                cout << "\n> ELements of binary tree in post-order fashion: ";
                 printPostorder(root);
 
-                cout << "\n\n> Do you wish to continue(Y/N)?";
+                cout << "\n\n> Do you wish to continue(Y/N)? ";
                 cin >> ch;
                 if (ch == 'Y')
                 {
                     cout << "\n> Inserting elements into linked list in inorder fashion\n";
-                    cout << "\n> Insertion successful\n";
-                    cout<<"> Linked list is: ";
+                    cout << "\n> Insertion successful\n\n";
+                    cout << "> Linked list is: ";
                     printInorder(root);
                     cout << "NULL\n";
 
-                    cout << "\n\n> Do you wish to continue(Y/N)?";
+                    cout << "\n\n> Do you wish to continue(Y/N)? ";
                     cin >> ch;
                     if (ch == 'Y')
                     {
@@ -289,21 +291,21 @@ int main()
                         getline(cin, s1);
                         do
                         {
-                            cout << "\n>Enter new string: ";
+                            cout << "\n\n> Enter new string: ";
                             getline(cin, str);
                             linkedlist.pb(str);
                             append(&head, str);
-                            cout << "\n> New string inserted into linked list\n";
+                            cout << "\n> New string inserted into linked list\n\n";
                             Sort(linkedlist);
                             cout << "\n> Applying quicksort to linked list........ \n";
                             cout << "\n> Linked list is: ";
                             printLinkedList(linkedlist);
-                            cout << "\n> Do you wish to continue(Y/N)?";
+                            cout << "\n> Do you wish to continue(Y/N)? ";
                             cin >> ch;
                             getline(cin, str);
                         } while (ch == 'Y');
 
-                        cout<< "\n> Thank you for using me!\n";
+                        cout << "\n> Thank you for using me. See you again later!!!\n";
                         return 0;
                     }
                     else
