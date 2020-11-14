@@ -125,7 +125,7 @@ void printPreOrder(struct Node *node)
         return;
 
     /* first print data of node */
-    cout << node->data << " ";
+    cout << node->data << ", ";
 
     /* then recur on left sutree */
     printPreOrder(node->left);
@@ -167,16 +167,16 @@ void printPostorder(struct Node *node)
     printPostorder(node->right);
 
     // now deal with the node
-    cout << node->data << " ";
+    cout << node->data << ", ";
 }
 
 /*--------------------------------------------------*/
 void printQueue(queue<string> q1)
 {
-    cout<<"[ ";
+    cout<<"[";
     while (!q1.empty())
     {
-        cout << q1.front() << " | ";
+        cout <<" | "<<q1.front() << " | ";
         q1.pop();
     }
     cout << "] \n";
@@ -207,23 +207,28 @@ void printLinkedList(vs linker)
 /*--------------------------------------------------*/
 int main()
 {
-    long long int n, i;
+    long long int n, i, x, y;
 
     cout << "> Enter required number of inputs: ";
     cin >> n;
     char ch;
     string str, s1;
-    getline(cin, s1);
+    getline(cin, s1);  //Dummy variable
     vs vec, ll;
     queue<string> q1;
     cout << "\n> Enter " << n << " inputs now: \n";
+
     for (i = 0; i < n; i++)
     {
-        cout << "> ";
+        cout << "> Name: ";
         getline(cin, str);
-        cout << "> Pushed to queue\n\n";
-        vec.pb(str);
-        q1.push(str);
+        cout<<"> Age: ";
+        cin>>x;
+        cout<<"> Year of Birth: ";
+        cin>>y;
+        cout<<"> Pushed to queue\n\n";
+        vec.pb(str); q1.push(str);
+        getline(cin, str);
     }
     cout << "> Elements of queue are: ";
     printQueue(q1);
@@ -253,7 +258,7 @@ int main()
         cout << "\n> Do you wish to continue(Y/N)? ";
         cin >> ch;
 
-        if (ch == 'Y')
+        if (ch == 'Y' )
         {
             cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n\n";
             Node *root = buildtree(vec, n);
@@ -291,8 +296,12 @@ int main()
                         getline(cin, s1);
                         do
                         {
-                            cout << "\n\n> Enter new string: ";
+                            cout << "\n\n> Enter new name: ";
                             getline(cin, str);
+                            cout<<"> Enter age: ";
+                            cin>>x;
+                            cout<<"> Enter year of birth: ";
+                            cin>>y;
                             linkedlist.pb(str);
                             append(&head, str);
                             cout << "\n> New string inserted into linked list\n\n";
