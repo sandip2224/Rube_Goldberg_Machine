@@ -235,7 +235,7 @@ int main()
     cout << "\n> Do you wish to continue(Y/N)? ";
     cin >> ch;
 
-    if (ch == 'Y')
+    if (ch == 'Y' || ch=='y')
     {
 
         cout << "\n> Dequeing elements from queue.\n\n";
@@ -258,7 +258,7 @@ int main()
         cout << "\n> Do you wish to continue(Y/N)? ";
         cin >> ch;
 
-        if (ch == 'Y' )
+        if (ch == 'Y' || ch=='y')
         {
             cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n\n";
             Node *root = buildtree(vec, n);
@@ -270,14 +270,14 @@ int main()
 
             cout << "\n\n> Do you wish to continue(Y/N)? ";
             cin >> ch;
-            if (ch == 'Y')
+            if (ch == 'Y' || ch=='y')
             {
                 cout << "\n> ELements of binary tree in post-order fashion: ";
                 printPostorder(root);
 
                 cout << "\n\n> Do you wish to continue(Y/N)? ";
                 cin >> ch;
-                if (ch == 'Y')
+                if (ch == 'Y' || ch=='y')
                 {
                     cout << "\n> Inserting elements into linked list in inorder fashion\n";
                     cout << "\n> Insertion successful\n\n";
@@ -287,7 +287,7 @@ int main()
 
                     cout << "\n\n> Do you wish to continue(Y/N)? ";
                     cin >> ch;
-                    if (ch == 'Y')
+                    if (ch == 'Y' || ch=='y')
                     {
                         cout << "\n> Applying quicksort to linked list........ \n";
                         Sort(linkedlist);
@@ -312,7 +312,7 @@ int main()
                             cout << "\n> Do you wish to continue(Y/N)? ";
                             cin >> ch;
                             getline(cin, str);
-                        } while (ch == 'Y');
+                        } while (ch == 'Y' || ch=='y');
 
                         cout << "\n> Thank you for using me. See you again later!!!\n";
                         return 0;
