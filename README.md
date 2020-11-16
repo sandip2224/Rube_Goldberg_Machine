@@ -32,7 +32,6 @@
 - [Acknowledgements](#acknowledgements)
 
 
-
 <!-- ABOUT THE PROJECT -->
 
 <h2 align="center">About the Project</h2>
