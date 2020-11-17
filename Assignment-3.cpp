@@ -15,7 +15,7 @@ public:
     Node *left;
     Node *right;
 
-    Node(string x)
+    Node(string x)       //To asssign values to new node
     {
         data = x;
         left = right = NULL;
@@ -207,29 +207,20 @@ void printLinkedList(vs linker)
 /*--------------------------------------------------*/
 int main()
 {
-    long long int n, i, x, y;
-
-    cout << "> Enter required number of inputs: ";
-    cin >> n;
+    long long int n=0, i, x, y;
+    string s1, str;
     char ch;
-    string str, s1;
-    getline(cin, s1);  //Dummy variable
-    vs vec, ll;
     queue<string> q1;
-    cout << "\n> Enter " << n << " inputs now: \n";
-
-    for (i = 0; i < n; i++)
-    {
-        cout << "> Name: ";
-        getline(cin, str);
-        cout<<"> Age: ";
-        cin>>x;
-        cout<<"> Year of Birth: ";
-        cin>>y;
-        cout<<"> Pushed to queue\n\n";
-        vec.pb(str); q1.push(str);
-        getline(cin, str);
+    vs vec, ll;
+    ifstream file("input.txt");
+    string data = "";
+    while(getline(file, data,'\n')){
+            size_t found = data.find(',');
+            string r = data.substr(0, found);
+            vec.pb(r); q1.push(r); n++;
     }
+    file.close();
+
     cout << "> Elements of queue are: ";
     printQueue(q1);
     cout << "\n> Do you wish to continue(Y/N)? ";
