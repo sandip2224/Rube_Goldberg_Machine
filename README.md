@@ -59,7 +59,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 <h2 align="center">Preview</h2>
 
-<p align="center"><img src="img/Preview.gif" alt="Preview Gif"/></p>
+<p align="center"><img src="img/preview.gif" alt="Preview Gif"/></p>
 
 <!-- GETTING STARTED -->
 
