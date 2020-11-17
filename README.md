@@ -44,6 +44,7 @@ Here's why it's so awesome:
 
 * We get to see the power of working with multiple data structures in C++ 😉
 * We get to interact and work with large-scale programs in an object oriented language ✅
+* The C++ project parses an external text file and thus implements multi-file concept :heart:
 
 **You may also suggest changes by forking this repository and creating a pull request or opening an issue.**  
 
