@@ -173,10 +173,10 @@ void printPostorder(struct Node *node)
 /*--------------------------------------------------*/
 void printQueue(queue<string> q1)
 {
-    cout<<"[";
+    cout << "[";
     while (!q1.empty())
     {
-        cout <<" | "<<q1.front() << " | ";
+        cout << " | " << q1.front() << " | ";
         q1.pop();
     }
     cout << "] \n";
@@ -209,11 +209,11 @@ int main()
 {
     long long int n, i, x, y;
 
-    cout << "> Enter required number of inputs: ";
+    cout << "> Enter required number of inputs: \n";
     cin >> n;
     char ch;
     string str, s1;
-    getline(cin, s1);  //Dummy variable
+    getline(cin, s1); //Dummy variable
     vs vec, ll;
     queue<string> q1;
     cout << "\n> Enter " << n << " inputs now: \n";
@@ -222,20 +222,21 @@ int main()
     {
         cout << "> Name: ";
         getline(cin, str);
-        cout<<"> Age: ";
-        cin>>x;
-        cout<<"> Year of Birth: ";
-        cin>>y;
-        cout<<"> Pushed to queue\n\n";
-        vec.pb(str); q1.push(str);
+        cout << "> Age: ";
+        cin >> x;
+        cout << "> Year of Birth: ";
+        cin >> y;
+        cout << "> Pushed to queue\n\n";
+        vec.pb(str);
+        q1.push(str);
         getline(cin, str);
     }
-    cout << "> Elements of queue are: ";
+    cout << "> Elements of the queue are: ";
     printQueue(q1);
     cout << "\n> Do you wish to continue(Y/N)? ";
     cin >> ch;
 
-    if (ch == 'Y' || ch=='y')
+    if (ch == 'Y' || ch == 'y')
     {
 
         cout << "\n> Dequeing elements from queue.\n\n";
@@ -258,11 +259,11 @@ int main()
         cout << "\n> Do you wish to continue(Y/N)? ";
         cin >> ch;
 
-        if (ch == 'Y' || ch=='y')
+        if (ch == 'Y' || ch == 'y')
         {
             cout << "\n> Inserting elements from queue to binary tree in level-order fashion\n\n";
             Node *root = buildtree(vec, n);
-            cout<<"2D Representation of Unordered Binary Tree:\n";
+            cout << "2D Representation of Unordered Binary Tree:\n";
             print2D(root);
             cout << "\n\n> Level order insertion into binary tree successful\n\n";
             cout << "\n> ELements of binary tree in pre-order fashion: ";
@@ -270,14 +271,14 @@ int main()
 
             cout << "\n\n> Do you wish to continue(Y/N)? ";
             cin >> ch;
-            if (ch == 'Y' || ch=='y')
+            if (ch == 'Y' || ch == 'y')
             {
                 cout << "\n> ELements of binary tree in post-order fashion: ";
                 printPostorder(root);
 
                 cout << "\n\n> Do you wish to continue(Y/N)? ";
                 cin >> ch;
-                if (ch == 'Y' || ch=='y')
+                if (ch == 'Y' || ch == 'y')
                 {
                     cout << "\n> Inserting elements into linked list in inorder fashion\n";
                     cout << "\n> Insertion successful\n\n";
@@ -287,7 +288,7 @@ int main()
 
                     cout << "\n\n> Do you wish to continue(Y/N)? ";
                     cin >> ch;
-                    if (ch == 'Y' || ch=='y')
+                    if (ch == 'Y' || ch == 'y')
                     {
                         cout << "\n> Applying quicksort to linked list........ \n";
                         Sort(linkedlist);
@@ -298,10 +299,10 @@ int main()
                         {
                             cout << "\n\n> Enter new name: ";
                             getline(cin, str);
-                            cout<<"> Enter age: ";
-                            cin>>x;
-                            cout<<"> Enter year of birth: ";
-                            cin>>y;
+                            cout << "> Enter age: ";
+                            cin >> x;
+                            cout << "> Enter year of birth: ";
+                            cin >> y;
                             linkedlist.pb(str);
                             append(&head, str);
                             cout << "\n> New string inserted into linked list\n\n";
@@ -312,7 +313,7 @@ int main()
                             cout << "\n> Do you wish to continue(Y/N)? ";
                             cin >> ch;
                             getline(cin, str);
-                        } while (ch == 'Y' || ch=='y');
+                        } while (ch == 'Y' || ch == 'y');
 
                         cout << "\n> Thank you for using me. See you again later!!!\n";
                         return 0;
