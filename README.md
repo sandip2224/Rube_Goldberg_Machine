@@ -1,4 +1,4 @@
-<h2 align="center">Rube's Goldberg Machine✅</h2>
+<h2 align="center">Rube's Goldberg Machine</h2>
 
 <p align="center">
    <img src="img/engineering.png" alt="Logo" height=90 weight=90/>
