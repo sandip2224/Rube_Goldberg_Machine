@@ -48,7 +48,8 @@ Here's why it's so awesome:
 
 **You may also suggest changes by forking this repository and creating a pull request or opening an issue.**  
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.  
+A list of commonly used resources that I find helpful are listed in the acknowledgements.
+Have Fun!
 
 
 <!-- BUILT WITH -->  
